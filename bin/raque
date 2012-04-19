@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+if ARGV[0] == nil || ARGV[1] == nil
+  STDOUT.puts <<-EOF
+Please provide command name
+
+Usage:
+  raque REDIS COMMAND [LOG_FILE]
+EOF
+  exit 0
+end
+
+require 'resque'
+require 'raque'
+
+STDOUT.puts "Connecting to Redis at #{ARGV[0].inspect}"
+Resque.redis = ARGV[0]
+STDOUT.puts "Adding #{ARGV[1]} to Raque queue"
+Resque.enqueue Raque, ARGV[1], ARGV[2]
+

@@ -3,10 +3,10 @@ require File.expand_path('../lib/raque/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Mal Curtis"]
-  gem.email         = ["mal@sitepoint.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.email         = ["mal@mal.co.nz"]
+  gem.description   = %q{Run Rake tasks via a Resque worker. Rails startup is slow, hence Rake is too. It's already loaded into Resque so let’s use it from there}
+  gem.summary       = gem.description
+  gem.homepage      = "https://github.com/snikch/raque"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "raque"
   gem.require_paths = ["lib"]
   gem.version       = Raque::VERSION
+
+  gem.add_dependency "rake"
+  gem.add_dependency "thor"
+  gem.add_dependency "resque"
 end
