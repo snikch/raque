@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "raque"
   gem.require_paths = ["lib"]
-  gem.version       = "0.0.2"
+  gem.version       = Raque::VERSION
 
   gem.add_dependency "rake"
   gem.add_dependency "thor"

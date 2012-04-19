@@ -11,10 +11,10 @@ EOF
 end
 
 require 'resque'
-require 'raque'
+require 'raque/runner'
 
 STDOUT.puts "Connecting to Redis at #{ARGV[0].inspect}"
 Resque.redis = ARGV[0]
 STDOUT.puts "Adding #{ARGV[1]} to Raque queue"
-Resque.enqueue Raque, ARGV[1], ARGV[2]
+Resque.enqueue Raque::Runner, ARGV[1], ARGV[2]
 
