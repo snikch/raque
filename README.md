@@ -1,6 +1,6 @@
 # Raque
 
-TODO: Write a gem description
+Loading Rails is shit, don&#39;t do it. Raque lets you run Rake tasks via Resque, saving you from loading Rails.
 
 ## Installation
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    raque REDIS_CONNECTION_STRING COMMAND [LOG_FILE]
+    
+    raque redis://127.0.0.1 db:migrate log/migrate.log
 
 ## Contributing
 
